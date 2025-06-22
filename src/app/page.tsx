@@ -261,7 +261,7 @@ export default function Home() {
             <div className="flex items-center w-full justify-center pt-16">
               <motion.img
                 variants={items}
-                src="/mock/pt-br/profile/pietra.png"
+                src="/mock/pt-Br/profile/pietra.png"
                 alt="Imagem de uma tela de evento"
                 className="w-[70%] textanimation"
                 loading="lazy"
