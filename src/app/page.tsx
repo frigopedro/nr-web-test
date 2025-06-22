@@ -1,11 +1,5 @@
 "use client";
 import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
 import { GithubIcon, Logo } from "@/components/icons";
 import Container from "@/components/container";
 import TitleDesc from "@/components/title-desc";
@@ -35,10 +29,11 @@ const items = {
 gsap.registerPlugin(ScrollTrigger);
 
 const images_rolls = [
-  "https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/12.png",
-  "https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/13.png",
-  "https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/14.png",
-  "https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/12.png",
+  "/mock/pt-Br/event/event-arraia-dos-calouros.png",
+  "/mock/pt-Br/event/event-casa-de-praia.png",
+  "/mock/pt-Br/event/event-nyc-squad-2025.png",
+  "/mock/pt-Br/event/event-maratona-de-series.png",
+  "/mock/pt-Br/event/event-andes-ski-trip.png",
   // Add more images as needed
 ];
 
@@ -46,6 +41,7 @@ export default function Home() {
   const main = useRef(null);
   const mainFlow = useRef(null);
   const containerFlow = useRef(null);
+  const wordByWordP = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const images = [
@@ -122,6 +118,25 @@ export default function Home() {
         images_roll.src = images_rolls[index];
       },
     });
+
+    // Word-by-word scroll animation for the special <p>
+    const wordP = wordByWordP.current;
+    if (wordP) {
+      const wordSpans = wordP.querySelectorAll(".gsap-word");
+      gsap.set(wordSpans, { opacity: 0, y: 30 });
+      gsap.to(wordSpans, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: wordP,
+          start: "top 80%",
+          end: "bottom 60%",
+          scrub: 1,
+        },
+      });
+    }
   }, []);
 
   return (
@@ -137,10 +152,8 @@ export default function Home() {
           <motion.img
             variants={items}
             style={{ paddingTop: "100px" }}
-            src={
-              "https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/12.png"
-            }
-            alt="Imagem de uma tela de evento"
+            src={"/mock/pt-Br/event/event-andes-ski-trip.png"}
+            alt="Evento Andes Ski Trip"
             id="image1"
             className="w-[20%] block min-w-[180px]"
             loading="lazy"
@@ -148,8 +161,8 @@ export default function Home() {
           <motion.img
             variants={items}
             style={{ paddingBottom: "100px" }}
-            src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/14.png"
-            alt="Imagem de uma tela de evento"
+            src="/mock/pt-Br/event/event-arraia-dos-calouros.png"
+            alt="Evento Arraiá dos Calouros"
             loading="lazy"
             id="image2"
             className="w-[20%] block min-w-[180px]"
@@ -158,8 +171,8 @@ export default function Home() {
           <motion.img
             variants={items}
             style={{ paddingBottom: "100px" }}
-            src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/15.png"
-            alt="Imagem de uma tela de evento"
+            src="/mock/pt-Br/event/event-casa-de-praia.png"
+            alt="Evento Casa de Praia"
             loading="lazy"
             id="image3"
             className="w-[20%] block min-w-[180px]"
@@ -168,8 +181,8 @@ export default function Home() {
           <motion.img
             variants={items}
             style={{ paddingBottom: "100px" }}
-            src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/11.png"
-            alt="Imagem de uma tela de evento"
+            src="/mock/pt-Br/event/event-churras-da-galera.png"
+            alt="Evento Churras da Galera"
             loading="lazy"
             id="image4"
             className="w-[20%] block min-w-[180px]"
@@ -177,8 +190,8 @@ export default function Home() {
           <motion.img
             variants={items}
             style={{ paddingTop: "100px" }}
-            src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/13.png"
-            alt="Imagem de uma tela de evento"
+            src="/mock/pt-Br/event/event-futebol-chopp.png"
+            alt="Evento Futebol Chopp"
             id="image5"
             className="w-[20%] block min-w-[180px]"
             loading="lazy"
@@ -193,13 +206,43 @@ export default function Home() {
         >
           <Logo className="textanimation" />
           <h3 className="textanimation">nosso role</h3>
-          <h1 className=" my-2 text-4xl text-center sm:text-5xl md:text6xl lg:text-7xl textanimation">
+          <h1 className=" my-2 text-3xl text-center sm:text-4xl md:text6xl lg:text-5xl textanimation">
             A rede social para <br /> fazer social
           </h1>
-          <p className="w-full text-center font-normal text-[#DFDFE8] px-2 sm:text-base md:text-xl md:w-4/5 lg:text-2xl textanimation">
-            De festas a festivais, aniversários a casamentos, queremos promover
-            e celebrar momentos marcantes com você. Descubra, crie, participe e
-            se divirta.
+
+          <p className="w-full text-center font-normal text-[#DFDFE8] px-2 sm:text-base md:text-lg md:w-4/5 lg:text-xl textanimation">
+            Descubra eventos feitos para você, crie o seu com poucos cliques,
+            venda ingressos, divida despesas e mantenha todos engajados antes,
+            durante e depois. É organização, pagamento e interação social
+            reunidos em uma plataforma intuitiva que faz a logística sumir e a
+            memória ficar.
+          </p>
+          <div className="mt-[20vh]" />
+          <p
+            ref={wordByWordP}
+            className="max-w-2xl mx-auto text-center font-normal text-[#DFDFE8] px-2 sm:text-2xl md:text-3xl md:w-4/5 lg:text-4xl xl:text-5xl textanimation"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              fontWeight: "500",
+            }}
+          >
+            {`Porque momentos marcantes merecem tecnologia à altura, e todo grande rolê começa aqui.`
+              .split(" ")
+              .map((word, i) => (
+                <span
+                  key={i}
+                  className="gsap-word text-3xl opacity-0 inline-block whitespace-pre"
+                  style={{
+                    opacity: 0,
+                    display: "inline-block",
+                    whiteSpace: "pre",
+                  }}
+                >
+                  {word + (i === 5 ? "\n" : " ")}
+                </span>
+              ))}
           </p>
         </div>
       </section>
@@ -218,7 +261,7 @@ export default function Home() {
             <div className="flex items-center w-full justify-center pt-16">
               <motion.img
                 variants={items}
-                src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/12.png"
+                src="/mock/pt-br/profile/pietra.png"
                 alt="Imagem de uma tela de evento"
                 className="w-[70%] textanimation"
                 loading="lazy"
@@ -246,7 +289,7 @@ export default function Home() {
             <div className="flex flex-col justify-between w-full flex-1 ">
               <div className="-mt-36 flex items-center justify-center w-full">
                 <img
-                  src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/12.png"
+                  src="/mock/pt-Br/home-page/app-home.png"
                   alt="Imagem de uma tela de evento"
                   className="w-[70%] textanimation max-w-72"
                   loading="lazy"
@@ -267,7 +310,7 @@ export default function Home() {
       {/* Seu role */}
 
       <div className="container mx-auto my-14">
-        <h1 className={`text-orange pb-4 pt-8 textanimation`}>Seu role</h1>
+        <h1 className={`text-pink pb-4 pt-8 textanimation`}>Seu role</h1>
 
         <div className="container mx-auto grid grid-cols-12 gap-x-[15px] gap-y-[15px] md:gap-y-[20px] md:gap-x-[20px] lg:gap-x-[25px] lg:gap-y-[25px] px-3">
           <Container className="col-span-12 bg-[#161617] overflow-hidden">
@@ -275,7 +318,7 @@ export default function Home() {
               <div className="lg:w-2/5">
                 <TitleDesc
                   title="Crie do seu jeito"
-                  titleClassName={"text-orange"}
+                  titleClassName={"text-pink"}
                 />
 
                 <div className="lg:w-3/4 mx-10 mb-6 lg:mx-0 lg:mt-64 lg:ml-10">
@@ -291,19 +334,19 @@ export default function Home() {
               <div className="h-[800px] flex-1 flex justify-center">
                 <div className="flex flex-1 gap-6 lg:gap-10 justify-center items-center overflow-x-hidden min-w-[600px] lg:-mr-10 ">
                   <img
-                    src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/12.png"
+                    src="/mock/pt-Br/event/event-viagem-para-foz.png"
                     alt="Imagem de uma tela de evento"
                     className="w-[30%] mt-10 lg:mt-20 textanimation"
                     loading="lazy"
                   />
                   <img
-                    src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/13.png"
+                    src="/mock/pt-Br/gallery/galeria-ski.png"
                     alt="Imagem de uma tela de evento"
                     className="w-[30%] -mt-10 lg:-mt-20 textanimation"
                     loading="lazy"
                   />
                   <img
-                    src="https://nossorole-public.s3.sa-east-1.amazonaws.com/landingpage/secondsection/14.png"
+                    src="/mock/pt-Br/event/event-andes-ski-trip.png"
                     alt="Imagem de uma tela de evento"
                     className="w-[30%] mt-10 lg:mt-20 textanimation"
                     loading="lazy"
@@ -312,53 +355,75 @@ export default function Home() {
               </div>
             </div>
           </Container>
-          <Container className="col-span-6 bg-[#161617] overflow-hidden">
+          <Container className="col-span-12 lg:col-span-6 bg-[#161617] overflow-hidden">
             <TitleDesc
-              title="Crie do seu jeito"
-              desc="Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu. Ipsum in minim deserunt non esse eiusmod mollit id dolore consectetur anim in eu eiusmod. Dolore sunt aliqua magna consectetur esse. "
-              titleClassName={"text-orange"}
+              title="Divida contas e despesas"
+              desc="Todo mundo fechou mas a conta não? Divida os custos com seus amigos e divirta-se sem preocupação"
+              titleClassName={"text-pink"}
             />
 
-            <div className="h-[700px] bg-red flex-1" />
+            <div className="h-[550px] lg:h-[700px] w-full flex justify-center items-center mt-10 ">
+              <img
+                src="/mock/pt-Br/expenses/expense-home.png"
+                alt="Imagem de uma tela de evento"
+                className="w-[60%] max-w-[300px] lg:max-w-[400px] mt-10 lg:mt-20 textanimation"
+                loading="lazy"
+              />
+            </div>
           </Container>
-          <Container className="col-span-6 bg-[#161617] overflow-hidden">
+          <Container className="col-span-12 lg:col-span-6 bg-[#161617] overflow-hidden">
             <TitleDesc
-              title="Crie do seu jeito"
-              desc="Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu. Ipsum in minim deserunt non esse eiusmod mollit id dolore consectetur anim in eu eiusmod. Dolore sunt aliqua magna consectetur esse. "
-              titleClassName={"text-orange"}
+              title="Sabe quem te deve?"
+              desc="Sem planilha e sem calculadora, nos organizamos quanto você deve, quanto te devem e quem ainda não pagou!"
+              titleClassName={"text-pink"}
             />
+            <div className="h-[500px] lg:h-[700px] flex items-center justify-center ">
+              <img
+                src="/expenses_division.png"
+                alt="Imagem de uma tela de evento"
+                className="w-full object-cover p-8 pointer-events-none	textanimation"
+                loading="lazy"
+              />
+            </div>
           </Container>
-          <Container className="col-span-8 bg-[#161617] overflow-hidden">
+          <Container className="col-span-12 lg:col-span-8 bg-[#161617] overflow-hidden">
             <TitleDesc
-              title="Crie do seu jeito"
-              desc="Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu. Ipsum in minim deserunt non esse eiusmod mollit id dolore consectetur anim in eu eiusmod. Dolore sunt aliqua magna consectetur esse. "
-              titleClassName={"text-orange"}
+              title="Convide seus amigos"
+              desc="Seja pelo Instagram, Whatsapp, Facebook ou X, o seu rolê merece ser compartilhado. Copie o link  e não deixe ninguém de fora."
+              titleClassName={"text-pink"}
             />
-            <div className="h-[800px] bg-red flex-1" />
+            <div className="h-[600px] lg:h-[700px] flex-1 flex justify-center">
+              <div className="flex flex-1 gap-6 lg:gap-10 justify-center items-center overflow-x-hidden min-w-[600px] lg:-mr-10 ">
+                <img
+                  src="/mock/pt-Br/invite/invite-ski.png"
+                  alt="Imagem de uma tela de evento"
+                  className="w-[25%] mt-10 lg:mt-20 textanimation"
+                  loading="lazy"
+                />
+                <img
+                  src="/mock/pt-Br/profile/glad.png"
+                  alt="Imagem de uma tela de evento"
+                  className="w-[25%] -mt-10 lg:-mt-20 textanimation"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </Container>
           <Container className="col-span-4 bg-[#161617] overflow-hidden">
             <TitleDesc
-              title="Crie do seu jeito"
-              desc="Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu. "
-              titleClassName={"text-orange"}
+              title="Galeria do rolê"
+              desc="Compartilhe e registre momentos únicos do seu rolê."
+              titleClassName={"text-pink"}
             />
-            <div className="h-[800px] bg-red flex-1" />
-          </Container>
-          <Container className="col-span-4 bg-[#161617] overflow-hidden">
-            <TitleDesc
-              title="Crie do seu jeito"
-              desc="Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu. Ipsum in minim deserunt non esse eiusmod mollit id dolore consectetur anim in eu eiusmod. Dolore sunt aliqua magna consectetur esse. "
-              titleClassName={"text-orange"}
-            />
-            <div className="h-[800px] bg-red flex-1" />
-          </Container>
-          <Container className="col-span-8 bg-[#161617] overflow-hidden">
-            <TitleDesc
-              title="Crie do seu jeito"
-              desc="Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu. "
-              titleClassName={"text-orange"}
-            />
-            <div className="h-[800px] bg-red flex-1" />
+
+            <div className="h-[700px] lg:h-[700px] w-full flex flex-1 justify-center items-center mt-10 ">
+              <img
+                src="/mock/pt-Br/gallery/galeria-nyc.png"
+                alt="Imagem de uma tela de evento"
+                className="w-[80%] max-w-[300px] lg:max-w-[600px] mt-10 lg:mt-20 textanimation"
+                loading="lazy"
+              />
+            </div>
           </Container>
         </div>
       </div>
@@ -380,7 +445,7 @@ export default function Home() {
 
                 <div className="w-3/4 mt-64 ml-10">
                   <h1 className="my-auto textanimation">
-                    Seu evento, do seu jeito. Crie e Compartilhe.
+                    Descubra qual rolê seus amigos estão confirmando
                   </h1>
                 </div>
               </div>

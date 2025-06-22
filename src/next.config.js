@@ -1,15 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
-        pathname: "/*",
-      },
-    ],
-  },
-};
+const nextTranslate = require('next-translate')
 
-module.exports = nextConfig;
+module.exports = nextTranslate({
+  locales: ['en', 'pt-BR'],
+  defaultLocale: 'pt-BR',
+  pages: {
+    '*': ['common'],
+  },
+})

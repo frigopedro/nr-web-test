@@ -13,7 +13,7 @@ export default function TitleDesc({
   titleClassName,
 }: TitleDescProps) {
   return (
-    <div className="px-10 pt-9">
+    <div className="px-6 pt-5 lg:px-10 lg:pt-9">
       <h3 className={cn("text-xl font-semibold textanimation", titleClassName)}>
         {title}
       </h3>

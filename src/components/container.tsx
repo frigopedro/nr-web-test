@@ -12,7 +12,10 @@ export default function Container({
 }: ContainerProps) {
   return (
     <motion.div
-      className={cn("rounded-[30px] bg-black animationcontainer", className)}
+      className={cn(
+        "rounded-[25px] lg:rounded-[30px] bg-black animationcontainer",
+        className
+      )}
     >
       {children}
     </motion.div>

@@ -77,7 +77,7 @@ export default function EventPage() {
       </div>
       <section className="container mx-auto mt-4">
         <div className="container mx-auto grid grid-cols-12 gap-x-[15px] gap-y-[15px] md:gap-y-[20px] md:gap-x-[20px] px-3">
-          <div className="col-span-3">
+          <div className=" col-span-12 md:col-span-12 lg:col-span-3 ">
             <h1 className="text-2xl mb-2">Informações</h1>
             <Container className="bg-gray  rounded-2xl h-full p-5">
               <h3 className="text-xl mb-3">Geral</h3>
@@ -92,7 +92,7 @@ export default function EventPage() {
               <h3 className="mb-2 text-lg">Rua Eugenio Feder,70</h3>
             </Container>
           </div>
-          <div className="col-span-5">
+          <div className="col-span-12 md:col-span-12 lg:col-span-5 ">
             <h1 className="text-2xl mb-2 opacity-0">.</h1>
 
             <Container className=" bg-gray rounded-xl h-full p-5">
@@ -109,7 +109,7 @@ export default function EventPage() {
             </Container>
           </div>
 
-          <div className="col-span-4">
+          <div className="col-span-12 md:col-span-12 lg:col-span-4 md:mt-8 lg:mt-0 mt-8 ">
             <h1 className="text-2xl mb-2">Participantes</h1>
             <Container className="bg-gray rounded-xl h-full p-5 ">
               <h3 className="text-xl">Organizadores</h3>

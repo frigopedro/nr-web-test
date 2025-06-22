@@ -1,4 +1,27 @@
 {
+  "brand": "nosso role",
+  "mainTitle": "The social network to socialize",
+  "mainDesc": "Discover events made for you, create your own with a few clicks, sell tickets, split expenses, and keep everyone engaged before, during, and after. It's organization, payment, and social interaction all in one intuitive platform that makes logistics disappear and memories last.",
+  "mainWordByWord": "Because remarkable moments deserve technology to match — and every great party starts here.",
   "know": "Get to know",
-  "description": "This is a Next.js application"
+  "interactTitle": "Interact, connect, and share.",
+  "interactDesc": "The ideal social network for those who want to enjoy life and party with friends, sharing memories and creating connections.",
+  "createEventTitle": "Create events your way",
+  "createEventDesc": "A party is diverse and our app lets you create it your way, whether public or private.",
+  "networkTitle": "A social network",
+  "networkDesc": "Find the events that suit you best and get your tickets easily within the app.",
+  "eventImageAlt": "Event screen image",
+  "yourRole": "Your role",
+  "createYourWay": "Create your way",
+  "yourEventYourWay": "Your event, your way. Create and Share.",
+  "splitBillsTitle": "Split bills and expenses",
+  "splitBillsDesc": "Everyone agreed but the bill didn't? Split the costs with your friends and have fun without worry.",
+  "whoOwesYouTitle": "Who owes you?",
+  "whoOwesYouDesc": "No spreadsheets or calculators, we keep track of what you owe, what they owe you, and who hasn't paid yet!",
+  "inviteFriendsTitle": "Invite your friends",
+  "inviteFriendsDesc": "Be it Instagram, Whatsapp, Facebook, or X, your party deserves to be shared. Copy the link and don't leave anyone out.",
+  "lorem1": "Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu.",
+  "lorem2": "Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu. Ipsum in minim deserunt non esse eiusmod mollit id dolore consectetur anim in eu eiusmod. Dolore sunt aliqua magna consectetur esse.",
+  "social": "Social",
+  "discoverFriendsEvents": "Discover which events your friends are confirming"
 }

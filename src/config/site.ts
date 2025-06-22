@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       label: "Sobre nós",
-      href: "/sobre",
+      href: "/about",
     },
     {
       label: "Organizadores",

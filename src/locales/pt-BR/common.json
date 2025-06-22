@@ -1,4 +1,27 @@
 {
+  "brand": "nosso role",
+  "mainTitle": "A rede social para fazer social",
+  "mainDesc": "Descubra eventos feitos para você, crie o seu com poucos cliques, venda ingressos, divida despesas e mantenha todos engajados antes, durante e depois. É organização, pagamento e interação social reunidos em uma plataforma intuitiva que faz a logística sumir e a memória ficar.",
+  "mainWordByWord": "Porque momentos marcantes merecem tecnologia à altura — e todo grande rolê começa aqui.",
   "know": "Conheça",
-  "description": "Este é um aplicativo Next.js"
+  "interactTitle": "Interaja, conecte-se e compartilhe.",
+  "interactDesc": "Rede Social ideal para quem quer curtir a vida e festejar com amigos, compartilhando memórias e criando conexões.",
+  "createEventTitle": "Crie eventos do seu jeito",
+  "createEventDesc": "Um rolê é muito diverso e nosso app possibilita que você crie ele do seu jeito, seja público ou privado.",
+  "networkTitle": "Uma rede social",
+  "networkDesc": "Encontre os eventos que mais combinam com você e adquira seus ingressos de forma prática dentro do app.",
+  "eventImageAlt": "Imagem de uma tela de evento",
+  "yourRole": "Seu role",
+  "createYourWay": "Crie do seu jeito",
+  "yourEventYourWay": "Seu evento, do seu jeito. Crie e Compartilhe.",
+  "splitBillsTitle": "Divida contas e despesas",
+  "splitBillsDesc": "Todo mundo fechou mas a conta não? Divida os custos com seus amigos e divirta-se sem preocupação",
+  "whoOwesYouTitle": "Sabe quem te deve?",
+  "whoOwesYouDesc": "Sem planilha e sem calculadora, nos organizamos quanto você deve, quanto te devem e quem ainda não pagou!",
+  "inviteFriendsTitle": "Convide seus amigos",
+  "inviteFriendsDesc": "Seja pelo Instagram, Whatsapp, Facebook ou X, o seu rolê merece ser compartilhado. Copie o link  e não deixe ninguém de fora.",
+  "lorem1": "Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu.",
+  "lorem2": "Irure consequat excepteur minim deserunt enim labore aliquip commodo ad esse magna ea eu. Ipsum in minim deserunt non esse eiusmod mollit id dolore consectetur anim in eu eiusmod. Dolore sunt aliqua magna consectetur esse.",
+  "social": "Social",
+  "discoverFriendsEvents": "Descubra qual rolê seus amigos estão confirmando"
 }

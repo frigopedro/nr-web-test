@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "lucide-react": "^0.522.0",
+    "next-translate": "^2.6.2"
+  }
+}
